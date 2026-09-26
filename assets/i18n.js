@@ -8,12 +8,11 @@
 window.REDBOT_I18N = {
   it: {
     "meta.title": "Redbot — Non puoi vincere. Puoi solo non farti vedere.",
-    "meta.desc": "Stealth-action 2D in Godot 4.7 per Xbox Series X|S e Xbox One. Un piccolo robot, guardiani enormi, nessun bottone d'attacco. In sviluppo presso Kairodev.",
+    "meta.desc": "Stealth-action 2D in Godot 4.7 per PC. Un piccolo robot, guardiani enormi, nessun bottone d'attacco. In sviluppo presso Kairodev.",
 
     "nav.game": "il gioco",
     "nav.mech": "meccaniche",
     "nav.studio": "studio",
-    "nav.xbox": "ID@Xbox",
     "nav.contact": "contatti",
 
     "hero.eyebrow": "Stealth-action 2D · Godot 4.7 · In sviluppo",
@@ -23,7 +22,7 @@ window.REDBOT_I18N = {
     "hero.cta.game": "Il gioco",
     "hero.cta.contact": "Contatti",
     "hero.status": "Vertical slice giocabile",
-    "hero.platform": "Xbox Series X|S · Xbox One · PC",
+    "hero.platform": "PC",
 
     "game.eyebrow": "IL GIOCO",
     "game.h2": "Un'ora di gioco. Nessun colpo.",
@@ -83,14 +82,6 @@ window.REDBOT_I18N = {
     "studio.p2": "Lavoriamo in Godot con verifica automatica: il progetto si controlla da solo a ogni modifica, e i controlli misurano le regole del gioco invece di guardarlo. È la parte noiosa che poi si vede nei difetti che non ci sono.",
     "studio.p3": "Redbot è il primo progetto. È anche il primo.",
 
-    "xbox.eyebrow": "ID@XBOX",
-    "xbox.h2": "In sviluppo per Xbox Series X|S e Xbox One.",
-    "xbox.lead": "Redbot è candidata al programma ID@Xbox. Il concept è completo e la build dimostrabile è già giocabile.",
-    "xbox.n1": "Il 2D è ammesso: per entrare nel programma non serve il 3D.",
-    "xbox.n2": "L'approvazione del concept non è la certificazione. Sono due passaggi distinti, e il secondo chiede mesi di test su console vera.",
-    "xbox.n3": "Il controller è il dispositivo di riferimento: su questo progetto ogni azione è già pensata per il pad, non adattata dopo.",
-    "xbox.cta": "Contattaci",
-
     "contact.eyebrow": "CONTATTI",
     "contact.h2": "Parliamo del gioco",
     "contact.p": "Per la build, per il concept completo, o solo per dirci che la locandina ti ricorda un altro gioco. Tutte e tre vanno bene.",
@@ -104,12 +95,11 @@ window.REDBOT_I18N = {
 
   en: {
     "meta.title": "Redbot — You cannot win. You can only stay unseen.",
-    "meta.desc": "A 2D stealth-action game in Godot 4.7 for Xbox Series X|S and Xbox One. A small robot, huge guardians, no attack button. In development at Kairodev.",
+    "meta.desc": "A 2D stealth-action game in Godot 4.7 for PC. A small robot, huge guardians, no attack button. In development at Kairodev.",
 
     "nav.game": "the game",
     "nav.mech": "mechanics",
     "nav.studio": "studio",
-    "nav.xbox": "ID@Xbox",
     "nav.contact": "contact",
 
     "hero.eyebrow": "2D stealth-action · Godot 4.7 · In development",
@@ -119,7 +109,7 @@ window.REDBOT_I18N = {
     "hero.cta.game": "The game",
     "hero.cta.contact": "Contact",
     "hero.status": "Playable vertical slice",
-    "hero.platform": "Xbox Series X|S · Xbox One · PC",
+    "hero.platform": "PC",
 
     "game.eyebrow": "THE GAME",
     "game.h2": "An hour of play. Not a single hit.",
@@ -178,14 +168,6 @@ window.REDBOT_I18N = {
     "studio.p1": "A small independent studio. We make one game at a time, and we finish it.",
     "studio.p2": "We work in Godot with automated verification: the project checks itself on every change, and the checks measure the rules of the game instead of looking at it. It is the boring part, and it shows up in the bugs that are not there.",
     "studio.p3": "Redbot is the first project. It is also the first.",
-
-    "xbox.eyebrow": "ID@XBOX",
-    "xbox.h2": "In development for Xbox Series X|S and Xbox One.",
-    "xbox.lead": "Redbot is applying to the ID@Xbox program. The concept is complete and the demonstrable build is already playable.",
-    "xbox.n1": "2D is accepted: you do not need 3D to enter the program.",
-    "xbox.n2": "Concept approval is not certification. They are separate steps, and the second one takes months of testing on real console hardware.",
-    "xbox.n3": "The controller is the reference device: on this project every action was designed for the pad first, not adapted afterwards.",
-    "xbox.cta": "Get in touch",
 
     "contact.eyebrow": "CONTACT",
     "contact.h2": "Let's talk about the game",
