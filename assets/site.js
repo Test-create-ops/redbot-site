@@ -99,13 +99,15 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       emailjs.sendForm("service_l1oug1v", "template_kefi52t", form)
-        .then(function () {
+        .then(function (r) {
+          console.log("[emailjs]", r.status, r.text);
           msg.textContent = t("contact.success");
           msg.style.color = "var(--relic)";
           form.reset();
         })
-        .catch(function () {
-          msg.textContent = t("contact.error");
+        .catch(function (err) {
+          console.error("[emailjs]", err);
+          msg.textContent = t("contact.error") + " " + (err && err.text ? err.text : "");
           msg.style.color = "var(--alert)";
         });
     });
