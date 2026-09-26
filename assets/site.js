@@ -98,7 +98,7 @@
     if (!form || !msg) return;
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form)
+      emailjs.sendForm("service_l1oug1v", "template_kefi52t", form)
         .then(function () {
           msg.textContent = t("contact.success");
           msg.style.color = "var(--relic)";
