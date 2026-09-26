@@ -92,10 +92,15 @@
   }
 
   function initEmailJS() {
-    emailjs.init("mqRYYzK2ZGpSwkqx_");
     var form = document.getElementById("contact-form");
     var msg = document.getElementById("contact-msg");
     if (!form || !msg) return;
+    if (typeof emailjs === "undefined") {
+      msg.textContent = "Il servizio email non è disponibile. Scrivi a ciao@kairodev.it.";
+      msg.style.color = "var(--alert)";
+      return;
+    }
+    emailjs.init("mqRYYzK2ZGpSwkqx_");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       emailjs.sendForm("service_l1oug1v", "template_kefi52t", form)
@@ -103,12 +108,18 @@
           console.log("[emailjs]", r.status, r.text);
           msg.textContent = t("contact.success");
           msg.style.color = "var(--relic)";
+          msg.style.fontWeight = "700";
           form.reset();
+          setTimeout(function () { msg.textContent = ""; }, 5000);
         })
         .catch(function (err) {
           console.error("[emailjs]", err);
-          msg.textContent = t("contact.error") + " " + (err && err.text ? err.text : "");
+          var errMsg = t("contact.error");
+          if (err && err.text) errMsg += ": " + err.text;
+          msg.textContent = errMsg;
           msg.style.color = "var(--alert)";
+          msg.style.fontWeight = "700";
+          setTimeout(function () { msg.textContent = ""; }, 10000);
         });
     });
   }
