@@ -92,14 +92,13 @@
   }
 
   function initEmailJS() {
-    var PUBLIC_KEY = "USER_PUBLIC_KEY";
-    try { emailjs.init(PUBLIC_KEY); } catch (e) { /* EmailJS non disponibile */ }
+    emailjs.init("mqRYYzK2ZGpSwkqx_");
     var form = document.getElementById("contact-form");
     var msg = document.getElementById("contact-msg");
     if (!form || !msg) return;
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      emailjs.sendForm("USER_SERVICE_ID", "USER_TEMPLATE_ID", form)
+      emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form)
         .then(function () {
           msg.textContent = t("contact.success");
           msg.style.color = "var(--relic)";
