@@ -286,7 +286,13 @@
         <p class="eyebrow" style="justify-content:center" data-i18n="contact.eyebrow">CONTATTI</p>
         <h2 data-i18n="contact.h2">Parliamo del gioco</h2>
         <p class="dim" data-i18n="contact.p">Per la build, per il concept completo.</p>
-        <p style="margin:0"><a class="btn btn-primary" href="mailto:ciao@kairodev.it" data-i18n="contact.button">ciao@kairodev.it</a></p>
+        <form id="contact-form" novalidate>
+          <input type="text" name="user_name" placeholder="Nome" required data-i18n-placeholder="contact.form.name">
+          <input type="email" name="user_email" placeholder="Email" required data-i18n-placeholder="contact.form.email">
+          <textarea name="message" rows="5" placeholder="Messaggio" required data-i18n-placeholder="contact.form.message"></textarea>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Invia</button>
+          <p class="dim" id="contact-msg" style="margin-top:10px"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -304,6 +310,7 @@
 </footer>
 
 <script src="assets/i18n.js"></script>
+<script src="assets/email.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>

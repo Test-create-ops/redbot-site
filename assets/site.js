@@ -35,6 +35,10 @@
       var el = nodes[i];
       el.textContent = t(el.getAttribute("data-i18n"));
     }
+    var placeholders = document.querySelectorAll("[data-i18n-placeholder]");
+    for (var p = 0; p < placeholders.length; p++) {
+      placeholders[p].placeholder = t(placeholders[p].getAttribute("data-i18n-placeholder"));
+    }
     var desc = document.querySelector('meta[name="description"]');
     if (desc) desc.setAttribute("content", t("meta.desc"));
     document.title = t("meta.title");
@@ -87,10 +91,32 @@
     for (var j = 0; j < items.length; j++) io.observe(items[j]);
   }
 
+  function initEmailJS() {
+    var PUBLIC_KEY = "USER_PUBLIC_KEY";
+    try { emailjs.init(PUBLIC_KEY); } catch (e) { /* EmailJS non disponibile */ }
+    var form = document.getElementById("contact-form");
+    var msg = document.getElementById("contact-msg");
+    if (!form || !msg) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      emailjs.sendForm("USER_SERVICE_ID", "USER_TEMPLATE_ID", form)
+        .then(function () {
+          msg.textContent = t("contact.success");
+          msg.style.color = "var(--relic)";
+          form.reset();
+        })
+        .catch(function () {
+          msg.textContent = t("contact.error");
+          msg.style.color = "var(--alert)";
+        });
+    });
+  }
+
   function boot() {
     initLang();
     initHeader();
     initReveal();
+    initEmailJS();
   }
 
   if (document.readyState === "loading") {

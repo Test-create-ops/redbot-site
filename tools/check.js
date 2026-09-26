@@ -52,6 +52,7 @@ function checkI18n() {
   // Il `\b` serve: senza, `closest(".stage")` sembra una chiamata a t().
   const used = new Set([
     ...[...html.matchAll(/data-i18n="([^"]+)"/g)].map((m) => m[1]),
+    ...[...html.matchAll(/data-i18n-placeholder="([^"]+)"/g)].map((m) => m[1]),
     ...[...site.matchAll(/\bt\("([^"]+)"\)/g)].map((m) => m[1]),
   ]);
 

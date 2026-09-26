@@ -192,8 +192,13 @@ header.is-solid { background: rgba(13, 15, 26, 0.94); border-bottom-color: var(-
 
 .contact-box { border: 1px solid var(--line); background: var(--floor); padding: clamp(30px, 5vw, 52px); text-align: center; }
 .contact-box .btn { margin-top: 8px; }
-.contact-box h2 { margin-bottom: 12px; }
-.contact-box p { margin-left: auto; margin-right: auto; }
+  .contact-box h2 { margin-bottom: 12px; }
+  .contact-box p { margin-left: auto; margin-right: auto; }
+  .contact-box form { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; text-align: left; }
+  .contact-box input, .contact-box textarea { background: var(--floor-deep); border: 1px solid var(--line); color: var(--ink); font-family: var(--sans); font-size: 15px; padding: 12px 14px; border-radius: 6px; outline: none; }
+  .contact-box input:focus, .contact-box textarea:focus { border-color: var(--cone); }
+  .contact-box textarea { resize: vertical; min-height: 100px; }
+  #contact-msg { font-size: 14px; }
 
 /* ---------- piede ---------- */
 
