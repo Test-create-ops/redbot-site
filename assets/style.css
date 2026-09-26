@@ -1,0 +1,237 @@
+/* Redbot — foglio di stile
+ *
+ * I colori non sono una scelta estetica: sono i valori dei costanti di
+ * /Redbot/scripts/world.gd, guardian.gd e hud.gd, convertiti in esadecimale.
+ *     FLOOR_COLOR   Color(0.10, 0.11, 0.14) -> #1a1c24
+ *     WALL_COLOR    Color(0.16, 0.18, 0.22) -> #292e38
+ *     SHADOW_COLOR  Color(0.05, 0.06, 0.10) -> #0d0f1a
+ *     cono di vista  Color(1.00, 0.85, 0.30) -> #ffd94d
+ *     reliquia      Color(0.95, 0.55, 0.25) -> #f28c40
+ *     allarme       Color(1.00, 0.35, 0.30) -> #ff5959
+ *     acciaio       Color(0.55, 0.60, 0.68) -> #8c99ad
+ *     vitone        Color(0.75, 0.80, 0.88) -> #c3cce0
+ * E' il motivo per cui il sito sembra lo stesso progetto invece di un'altra
+ * cosa con la stessa idea.
+ *
+ * Niente webfont: il sito non fa una sola richiesta di rete, come il gioco
+ * non fa una sola chiamata a un server. Font di sistema, niente CDN, niente
+ * traccianti.
+ */
+
+:root {
+  --floor: #1a1c24;
+  --floor-deep: #0d0f1a;
+  --wall: #292e38;
+  --steel: #8c99ad;
+  --ink: #c3cce0;
+  --bone: #e8ecf4;
+  --cone: #ffd94d;
+  --relic: #f28c40;
+  --alert: #ff5959;
+  --line: rgba(140, 153, 173, 0.22);
+  --line-soft: rgba(140, 153, 173, 0.11);
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --sans: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --maxw: 1120px;
+  --safe-x: 6%;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--floor-deep);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--safe-x); min-width: 0; }
+.wrap, .wrap * { overflow-wrap: break-word; }
+html { overflow-x: hidden; }
+
+.skip { position: absolute; left: -9999px; top: 0; background: var(--cone); color: #11131a; padding: 12px 18px; font-family: var(--mono); z-index: 100; }
+.skip:focus { left: 0; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin: 0 0 14px;
+}
+.eyebrow::before { content: ""; display: inline-block; width: 28px; height: 1px; background: var(--cone); vertical-align: middle; margin-right: 12px; }
+
+h1, h2, h3 { color: var(--bone); font-weight: 700; letter-spacing: -0.012em; }
+h1 { font-size: clamp(2.8rem, 9vw, 5.8rem); margin: 0; line-height: 0.94; }
+h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); margin: 0 0 18px; line-height: 1.1; }
+h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0; }
+
+p { margin: 0 0 18px; max-width: 64ch; }
+.lead { font-size: clamp(1.05rem, 2.1vw, 1.22rem); color: var(--bone); max-width: 58ch; }
+.dim { color: var(--steel); }
+.mono { font-family: var(--mono); }
+
+section { padding: clamp(64px, 9vw, 120px) 0; border-top: 1px solid var(--line-soft); }
+section:first-of-type { border-top: 0; }
+
+/* ---------- testata ---------- */
+
+header {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(13, 15, 26, 0.72);
+  border-bottom: 1px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+header.is-solid { background: rgba(13, 15, 26, 0.94); border-bottom-color: var(--line-soft); }
+.bar { display: flex; align-items: center; gap: 24px; height: 68px; }
+.mark { display: flex; align-items: center; gap: 11px; color: var(--bone); text-decoration: none; font-weight: 700; letter-spacing: 0.14em; font-size: 14px; }
+.mark svg { display: block; }
+.navlinks { margin-left: auto; display: flex; align-items: center; gap: 26px; }
+.navlinks a { color: var(--steel); text-decoration: none; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; }
+.navlinks a:hover, .navlinks a:focus-visible { color: var(--cone); }
+
+.lang { display: flex; border: 1px solid var(--line); }
+.lang button { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.1em; padding: 6px 10px; background: transparent; color: var(--steel); border: 0; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--cone); color: #11131a; }
+.lang { flex-shrink: 1; }
+
+/* ---------- pulsanti ---------- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+}
+.btn:hover, .btn:focus-visible { border-color: var(--cone); color: var(--cone); }
+.btn-primary { background: var(--cone); color: #11131a; border-color: var(--cone); font-weight: 700; }
+.btn-primary:hover, .btn-primary:focus-visible { background: #ffdf6e; border-color: #ffdf6e; color: #11131a; }
+
+/* ---------- eroe ---------- */
+
+.hero { padding-top: clamp(48px, 7vw, 88px); padding-bottom: clamp(56px, 8vw, 100px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(36px, 5vw, 64px); align-items: center; }
+.hero-grid > * { min-width: 0; }
+.tagline { font-size: clamp(1.15rem, 2.5vw, 1.42rem); color: var(--bone); border-left: 3px solid var(--alert); padding-left: 18px; margin: 26px 0 22px; max-width: 26ch; overflow-wrap: break-word; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin: 30px 0 26px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel); border: 1px solid var(--line); padding: 7px 12px; }
+.chip.live { color: var(--cone); border-color: rgba(255, 217, 77, 0.4); }
+.chip.live::before { content: ""; display: inline-block; width: 6px; height: 6px; background: var(--relic); border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+
+/* key art: illustrazione, non schermata di gioco */
+.keyart { border: 1px solid var(--line); background: var(--floor); }
+.keyart svg { display: block; width: 100%; height: auto; }
+.keyart figcaption { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.1em; color: var(--steel); padding: 12px 16px; border-top: 1px solid var(--line-soft); }
+
+/* Il cono respira appena: 7 secondi, variazione minima. Serve a dare il
+ * segnale che l'illustrazione è viva senza far sembrare la pagina una
+ * vetrina animata. Sotto prefers-reduced-motion l'animazione viene spenta
+ * del tutto, piu' sotto. */
+.cone-lit { animation: breathe 7s ease-in-out infinite alternate; }
+@keyframes breathe { from { opacity: 0.78; } to { opacity: 1; } }
+
+/* ---------- pilastri, meccaniche, contenuti ---------- */
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.card { background: var(--floor); padding: 26px 24px 28px; }
+.card:hover { background: #1f222b; }
+.card p { margin: 0; color: var(--steel); font-size: 15px; }
+.card .key { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.card .num { font-family: var(--mono); font-size: 12px; color: var(--relic); letter-spacing: 0.1em; }
+
+/* bottoni Xbox: i colori sono quelli dello Xbox, e sono giusti anche se tutto
+ * il resto del sito e' grigio. Un giocatore console legge "quello verde e' A"
+ * senza una legenda: e' una convenzione con vent'anni di addestramento, e
+ * sprecare parole per spiegarla sarebbe un costo. */
+.keycap { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; padding: 0 9px; border-radius: 50%; font-family: var(--mono); font-size: 12px; font-weight: 700; color: #0d0f1a; letter-spacing: 0.04em; flex: none; }
+.k-a { background: #7fba00; }
+.k-b { background: #e04e2e; color: #fff; }
+.k-x { background: #2a7de1; color: #fff; }
+.k-y { background: #e8c22e; }
+.k-shoulder { border-radius: 8px; background: var(--steel); }
+.k-stick { border-radius: 50%; background: transparent; border: 2px solid var(--steel); color: var(--steel); }
+
+/* ---------- elenchi ---------- */
+
+.split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(30px, 5vw, 60px); align-items: start; }
+.facts { list-style: none; margin: 0; padding: 0; }
+.facts li { display: flex; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline; }
+.facts li::before { content: "—"; color: var(--cone); flex: none; }
+
+.callout { border: 1px solid var(--line); border-left: 3px solid var(--relic); padding: 20px 22px; background: var(--floor); margin: 28px 0 0; }
+.callout p:last-child { margin-bottom: 0; }
+
+/* ---------- materiale ---------- */
+
+.frames { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 34px; }
+.frame { border: 1px solid var(--line); background: var(--floor); position: relative; }
+.frame .slot { aspect-ratio: 16 / 9; display: grid; place-items: center; gap: 8px; background: repeating-linear-gradient(135deg, #1d2029 0 12px, #191c24 12px 24px); }
+.frame .slot span { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--steel); }
+.frame .tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--relic); padding: 11px 14px; border-top: 1px solid var(--line-soft); display: flex; justify-content: space-between; }
+.frame .tag em { color: var(--steel); font-style: normal; }
+
+/* ---------- studio ---------- */
+
+.studio-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(30px, 5vw, 60px); align-items: start; }
+.mark-big { width: 78px; height: 78px; margin-bottom: 22px; }
+
+/* ---------- contatti ---------- */
+
+.contact-box { border: 1px solid var(--line); background: var(--floor); padding: clamp(30px, 5vw, 52px); text-align: center; }
+.contact-box .btn { margin-top: 8px; }
+.contact-box h2 { margin-bottom: 12px; }
+.contact-box p { margin-left: auto; margin-right: auto; }
+
+/* ---------- piede ---------- */
+
+footer { padding: 46px 0 60px; border-top: 1px solid var(--line-soft); color: var(--steel); font-size: 14px; }
+.footrow { display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; }
+.footrow .mono { font-size: 12px; letter-spacing: 0.1em; }
+.footrow a { color: var(--steel); }
+.footrow .spacer { margin-left: auto; }
+
+/* ---------- rivelazioni ---------- */
+
+.reveal { opacity: 0; transform: translateY(14px); }
+.reveal.in { opacity: 1; transform: none; transition: opacity 0.5s ease, transform 0.5s ease; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 980px) {
+  .hero-grid, .split, .studio-grid { grid-template-columns: minmax(0, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .grid-3, .grid-2, .frames { grid-template-columns: minmax(0, 1fr); }
+  .navlinks a { display: none; }
+  .navlinks a.contact-link { display: inline; }
+  .bar { height: 60px; }
+}
+
+/* ---------- movimento ridotto ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  .reveal { opacity: 1; transform: none; }
+  /* L'illuminazione della key art si ferma: e' un'animazione continua, che e'
+     esattamente cio' che questa impostazione chiede di non avere. */
+  .cone-lit { animation: none !important; }
+}

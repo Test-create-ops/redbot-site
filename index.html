@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Redbot — Non puoi vincere. Puoi solo non farti vedere.</title>
+<meta name="description" content="Stealth-action 2D in Godot 4.7 per Xbox Series X|S e Xbox One. Un piccolo robot, guardiani enormi, nessun bottone d'attacco. In sviluppo presso Kairodev.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d0f1a">
+<meta name="author" content="Kairodev">
+<meta property="og:site_name" content="Redbot">
+<meta property="og:title" content="Redbot">
+<meta property="og:description" content="Non puoi vincere. Puoi solo non farti vedere.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#game" data-i18n="nav.game">il gioco</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="#top" aria-label="Redbot">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="6" y="7" width="12" height="11" fill="#1a1c24" stroke="#8c99ad" stroke-width="1.6"/>
+        <rect x="10" y="11" width="4" height="3" fill="#ffd94d"/>
+        <path d="M12 7V3" stroke="#8c99ad" stroke-width="1.6"/>
+        <circle cx="12" cy="2.4" r="1.4" fill="#ff5959"/>
+      </svg>
+      <span>REDBOT</span>
+    </a>
+    <nav class="navlinks">
+      <a href="#game" data-i18n="nav.game">il gioco</a>
+      <a href="#mech" data-i18n="nav.mech">meccaniche</a>
+      <a href="#studio" data-i18n="nav.studio">studio</a>
+      <a href="#xbox" data-i18n="nav.xbox">ID@Xbox</a>
+      <a href="#contact" class="contact-link" data-i18n="nav.contact">contatti</a>
+      <div class="lang" role="group" aria-label="Language / Lingua">
+        <button type="button" data-lang="it" aria-pressed="true">IT</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= EROE ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Stealth-action 2D · Godot 4.7 · In sviluppo</p>
+        <h1 data-i18n="hero.title">Redbot</h1>
+        <p class="tagline" data-i18n="hero.tagline">Non puoi vincere. Puoi solo non farti vedere.</p>
+        <p class="lead" data-i18n="hero.lead">Sei un piccolo robot di manutenzione in un impianto dismesso.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#game" data-i18n="hero.cta.game">Il gioco</a>
+          <a class="btn" href="#contact" data-i18n="hero.cta.contact">Contatti</a>
+        </div>
+        <div class="chips">
+          <span class="chip live" data-i18n="hero.status">Vertical slice giocabile</span>
+          <span class="chip" data-i18n="hero.platform">Xbox Series X|S · Xbox One · PC</span>
+        </div>
+      </div>
+
+      <!-- Key art. Illustrazione, non schermata: forme geometriche, un cono di
+           luce che arriva fuori inquadratura e il robot piccolo nell'ombra.
+           Non c'è HUD, non c'è interfaccia, non c'è una stanza da giocare:
+           è una locandina, e vuole dirsi tale. -->
+      <figure class="keyart">
+        <svg viewBox="0 0 900 520" role="img" aria-label="Locandina: un piccolo robot bianco nell'ombra di un muro, illuminato da un cono di luce gialla che arriva dall'alto a destra.">
+          <defs>
+            <linearGradient id="beam" x1="1" y1="0" x2="0.25" y2="1">
+              <stop offset="0" stop-color="#ffd94d" stop-opacity="0.30"/>
+              <stop offset="1" stop-color="#ffd94d" stop-opacity="0.02"/>
+            </linearGradient>
+            <radialGradient id="pool" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#ffd94d" stop-opacity="0.22"/>
+              <stop offset="1" stop-color="#ffd94d" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="vig" cx="0.5" cy="0.45" r="0.75">
+              <stop offset="0.45" stop-color="#0d0f1a" stop-opacity="0"/>
+              <stop offset="1" stop-color="#0d0f1a" stop-opacity="0.92"/>
+            </radialGradient>
+            <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#c3cce0" stop-opacity="0.22"/>
+              <stop offset="1" stop-color="#c3cce0" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <rect width="900" height="520" fill="#14161f"/>
+
+          <!-- griglia di impianti -->
+          <g stroke="#8c99ad" stroke-opacity="0.07" stroke-width="1">
+            <path d="M0 80H900M0 160H900M0 240H900M0 320H900M0 400H900M0 480H900"/>
+            <path d="M90 0V520M210 0V520M330 0V520M450 0V520M570 0V520M690 0V520M810 0V520"/>
+          </g>
+
+          <!-- il cono: arriva da fuori inquadratura, in alto a destra -->
+          <g class="cone-lit">
+            <path d="M900 -20 L250 520 L900 520 Z" fill="url(#beam)"/>
+            <ellipse cx="470" cy="392" rx="250" ry="150" fill="url(#pool)"/>
+          </g>
+
+          <!-- muro e la sua ombra proiettata: il posto dove il robot si trova -->
+          <rect x="92" y="176" width="188" height="248" fill="#22262f"/>
+          <rect x="92" y="176" width="188" height="7" fill="#2f3440"/>
+          <rect x="112" y="392" width="330" height="128" fill="#0a0c14"/>
+          <rect x="112" y="392" width="330" height="128" fill="none"
+                stroke="#8c99ad" stroke-opacity="0.16" stroke-dasharray="9 11"/>
+
+          <!-- blocchi lontani, solo per dare profondita' -->
+          <g fill="#1d2029">
+            <rect x="612" y="120" width="132" height="86"/>
+            <rect x="716" y="300" width="96" height="64"/>
+          </g>
+
+          <!-- il robot: piccolo, di spalle, un occhio solo -->
+          <ellipse cx="268" cy="452" rx="86" ry="52" fill="url(#halo)"/>
+          <g>
+            <path d="M268 424V414" stroke="#8c99ad" stroke-width="2.4"/>
+            <circle cx="268" cy="409" r="3.4" fill="#ff5959"/>
+            <rect x="248" y="424" width="40" height="34" rx="3" fill="#c3cce0"/>
+            <rect x="259" y="433" width="18" height="8" fill="#14161f"/>
+            <rect x="262" y="435" width="12" height="4" fill="#ffd94d"/>
+          </g>
+
+          <!-- bordo in basso: la reliquia, lontana, quasi fuori portata -->
+          <g transform="translate(806 462) rotate(45)">
+            <rect x="-8" y="-8" width="16" height="16" fill="#f28c40" fill-opacity="0.85"/>
+          </g>
+
+          <rect width="900" height="520" fill="url(#vig)"/>
+        </svg>
+        <figcaption data-i18n="media.note">Locandina. Non è una schermata di gioco.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= IL GIOCO ================= -->
+  <section id="game">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="game.eyebrow">IL GIOCO</p>
+      <h2 data-i18n="game.h2">Un'ora di gioco. Nessun colpo.</h2>
+      <div class="split">
+        <div class="reveal">
+          <p class="lead" data-i18n="game.p1">Non puoi vincere nessuno scontro.</p>
+          <p class="dim" data-i18n="game.p2">Ogni incontro dura qualche minuto e finisce con una reliquia raccolta.</p>
+        </div>
+        <div class="reveal">
+          <div class="callout">
+            <p class="mono" style="margin:0;color:var(--cone)" data-i18n="fail.quote">Nessuno è stato ferito. Era il piano.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-top:38px">
+        <article class="card reveal">
+          <div class="key"><span class="num">01</span><h3 data-i18n="pillar.1.t">Leggere, non reagire</h3></div>
+          <p data-i18n="pillar.1.d">Il cono di vista è disegnato a terra.</p>
+        </article>
+        <article class="card reveal">
+          <div class="key"><span class="num">02</span><h3 data-i18n="pillar.2.t">Il rumore è una risorsa</h3></div>
+          <p data-i18n="pillar.2.d">Lancia un vitone e una guardia va a controllare.</p>
+        </article>
+        <article class="card reveal">
+          <div class="key"><span class="num">03</span><h3 data-i18n="pillar.3.t">Fallire costa niente</h3></div>
+          <p data-i18n="pillar.3.d">Checkpoint frequenti, riavvio immediato.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MECCANICHE ================= -->
+  <section id="mech">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="mech.eyebrow">MECCANICHE</p>
+      <h2 data-i18n="mech.h2">Sei tasti. Nessuno fa male.</h2>
+      <p class="lead" data-i18n="mech.lead">Non esiste un pulsante d'attacco.</p>
+
+      <div class="grid-2" style="margin-top:34px">
+        <article class="card reveal">
+          <div class="key"><span class="keycap k-shoulder">LB</span><h3 data-i18n="verb.crouch">Accovacciati</h3></div>
+          <p data-i18n="verb.crouch.d">Più lento, profilo più basso.</p>
+        </article>
+        <article class="card reveal">
+          <div class="key"><span class="keycap k-x">X</span><h3 data-i18n="verb.dodge">Schivata</h3></div>
+          <p data-i18n="verb.dodge.d">Frame di invulnerabilità.</p>
+        </article>
+        <article class="card reveal">
+          <div class="key"><span class="keycap k-y">Y</span><h3 data-i18n="verb.throw">Lancia</h3></div>
+          <p data-i18n="verb.throw.d">Un vitone: fa rumore, non danno.</p>
+        </article>
+        <article class="card reveal">
+          <div class="key"><span class="keycap k-shoulder">RB</span><h3 data-i18n="verb.observe">Osserva</h3></div>
+          <p data-i18n="verb.observe.d">Coni di vista e zone d'ombra.</p>
+        </article>
+        <article class="card reveal">
+          <div class="key"><span class="keycap k-a">A</span><h3 data-i18n="verb.interact">Interagisci</h3></div>
+          <p data-i18n="verb.interact.d">Raccogli, prendi la reliquia.</p>
+        </article>
+        <article class="card reveal">
+          <div class="key"><span class="keycap k-stick">L3</span><h3 data-i18n="verb.retry">Riavvia</h3></div>
+          <p data-i18n="verb.retry.d">Torna al checkpoint più vicino.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTENUTO ================= -->
+  <section id="content">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="feat.eyebrow">CONTENUTO</p>
+      <h2 data-i18n="feat.h2">Cosa trovi quando esce.</h2>
+      <div class="grid-3" style="margin-top:34px">
+        <article class="card reveal"><h3 data-i18n="feat.1.t">Solo giocatore singolo</h3><p data-i18n="feat.1.d">Nessun matchmaking.</p></article>
+        <article class="card reveal"><h3 data-i18n="feat.2.t">Livelli da 5 a 10 minuti</h3><p data-i18n="feat.2.d">Sessioni corte.</p></article>
+        <article class="card reveal"><h3 data-i18n="feat.3.t">Checkpoint frequenti</h3><p data-i18n="feat.3.d">Riavvio con un tasto.</p></article>
+        <article class="card reveal"><h3 data-i18n="feat.4.t">Pensato per il controller</h3><p data-i18n="feat.4.d">Ogni azione su un tasto.</p></article>
+        <article class="card reveal"><h3 data-i18n="feat.5.t">Italiano e inglese</h3><p data-i18n="feat.5.d">Chiavi verificate.</p></article>
+        <article class="card reveal"><h3 data-i18n="feat.6.t">Nessuna violenza esplicita</h3><p data-i18n="feat.6.d">Niente sangue.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MATERIALE ================= -->
+  <section id="media">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="media.eyebrow">MATERIALE</p>
+      <h2 data-i18n="media.h2">Schermate e trailer in arrivo.</h2>
+      <p class="dim" data-i18n="media.note">Non pubblichiamo immagini finché non sono definitive.</p>
+      <div class="frames">
+        <div class="frame reveal"><div class="slot"><span data-i18n="media.1">Schermata 01</span></div>
+          <div class="tag"><span>01</span><em data-i18n="media.pending">da produrre</em></div></div>
+        <div class="frame reveal"><div class="slot"><span data-i18n="media.2">Schermata 02</span></div>
+          <div class="tag"><span>02</span><em data-i18n="media.pending">da produrre</em></div></div>
+        <div class="frame reveal"><div class="slot"><span data-i18n="media.3">Trailer</span></div>
+          <div class="tag"><span>03</span><em data-i18n="media.pending">da produrre</em></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STUDIO ================= -->
+  <section id="studio">
+    <div class="wrap studio-grid">
+      <div class="reveal">
+        <svg class="mark-big" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="6" y="7" width="12" height="11" fill="#1a1c24" stroke="#8c99ad" stroke-width="1.2"/>
+          <rect x="10" y="11" width="4" height="3" fill="#ffd94d"/>
+          <path d="M12 7V3" stroke="#8c99ad" stroke-width="1.2"/>
+          <circle cx="12" cy="2.4" r="1.2" fill="#ff5959"/>
+        </svg>
+        <p class="eyebrow" data-i18n="studio.eyebrow">STUDIO</p>
+        <h2 data-i18n="studio.h2">Kairodev</h2>
+      </div>
+      <div class="reveal">
+        <p class="lead" data-i18n="studio.p1">Piccolo studio indipendente.</p>
+        <p class="dim" data-i18n="studio.p2">Lavoriamo in Godot con verifica automatica.</p>
+        <p class="dim" data-i18n="studio.p3">Redbot è il primo progetto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ID@XBOX ================= -->
+  <section id="xbox">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="eyebrow" data-i18n="xbox.eyebrow">ID@XBOX</p>
+        <h2 data-i18n="xbox.h2">In sviluppo per Xbox Series X|S e Xbox One.</h2>
+        <p class="lead" data-i18n="xbox.lead">Redbot è candidata al programma ID@Xbox.</p>
+        <p style="margin-top:26px"><a class="btn" href="#contact" data-i18n="xbox.cta">Contattaci</a></p>
+      </div>
+      <ul class="facts reveal">
+        <li><span data-i18n="xbox.n1">Il 2D è ammesso.</span></li>
+        <li><span data-i18n="xbox.n2">L'approvazione del concept non è la certificazione.</span></li>
+        <li><span data-i18n="xbox.n3">Il controller è il dispositivo di riferimento.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= CONTATTI ================= -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-box reveal">
+        <p class="eyebrow" style="justify-content:center" data-i18n="contact.eyebrow">CONTATTI</p>
+        <h2 data-i18n="contact.h2">Parliamo del gioco</h2>
+        <p class="dim" data-i18n="contact.p">Per la build, per il concept completo.</p>
+        <p style="margin:0"><a class="btn btn-primary" href="mailto:ciao@kairodev.it" data-i18n="contact.button">ciao@kairodev.it</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footrow">
+    <span class="mono" data-i18n="foot.tag">Redbot · Kairodev</span>
+    <span class="mono dim" data-i18n="foot.engine">Godot 4.7</span>
+    <span class="dim" style="font-size:13px" data-i18n="foot.net">Questa pagina non fa richieste di rete.</span>
+    <span class="spacer"></span>
+    <span class="mono dim" data-i18n="foot.rights">Tutti i diritti riservati.</span>
+  </div>
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

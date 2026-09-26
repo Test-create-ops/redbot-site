@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Il robot del gioco: quadrato, un occhio solo, antenna rossa.
+       Stessi colori di scripts/world.gd, non una reinterpretazione. -->
+  <rect width="32" height="32" fill="#0d0f1a"/>
+  <rect x="8" y="10" width="16" height="14" fill="#1a1c24" stroke="#8c99ad" stroke-width="2"/>
+  <rect x="13" y="15" width="6" height="4" fill="#ffd94d"/>
+  <path d="M16 10V5" stroke="#8c99ad" stroke-width="2"/>
+  <circle cx="16" cy="4" r="2" fill="#ff5959"/>
+</svg>

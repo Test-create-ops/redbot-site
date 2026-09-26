@@ -1,0 +1,41 @@
+name: Deploy del sito
+
+on:
+  push:
+    branches: [main]
+  # si può anche lanciare a mano dalla tab Actions
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  # serve a ottenere il token con cui GitHub firma il deployment
+  id-token: write
+
+# Due push in fila: si deploya solo il più recente.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+          # include-hidden-files: senza, .nojekyll verrebbe escluso
+          # (upload-pages-artifact salta i file nascosti per impostazione
+          # predefinita). Con GitHub Actions non serve, ma costa nulla e
+          # rende il sito portabile anche su un host statico qualsiasi.
+          include-hidden-files: true
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
