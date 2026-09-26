@@ -13,7 +13,7 @@ window.REDBOT_I18N = {
     "nav.game": "il gioco",
     "nav.mech": "meccaniche",
     "nav.studio": "studio",
-    "nav.contact": "contatti",
+    
 
     "hero.eyebrow": "Stealth-action 2D · Godot 4.7 · In sviluppo",
     "hero.title": "Redbot",
@@ -82,15 +82,7 @@ window.REDBOT_I18N = {
     "studio.p2": "Lavoriamo in Godot con verifica automatica: il progetto si controlla da solo a ogni modifica, e i controlli misurano le regole del gioco invece di guardarlo. È la parte noiosa che poi si vede nei difetti che non ci sono.",
     "studio.p3": "Redbot è il primo progetto. È anche il primo.",
 
-    "contact.eyebrow": "CONTATTI",
-    "contact.h2": "Parliamo del gioco",
-    "contact.p": "Per la build, per il concept completo, o solo per dirci che la locandina ti ricorda un altro gioco. Tutte e tre vanno bene.",
-    "contact.form.name": "Il tuo nome",
-    "contact.form.email": "La tua email",
-    "contact.form.message": "Messaggio",
-    "contact.form.submit": "Invia",
-    "contact.success": "Messaggio inviato — ti rispondo presto.",
-    "contact.error": "Qualcosa è andato storto. Riprova o scrivi a ciao@kairodev.it.",
+    
 
     "foot.tag": "Redbot · Kairodev",
     "foot.engine": "Godot 4.7",
@@ -105,7 +97,7 @@ window.REDBOT_I18N = {
     "nav.game": "the game",
     "nav.mech": "mechanics",
     "nav.studio": "studio",
-    "nav.contact": "contact",
+    
 
     "hero.eyebrow": "2D stealth-action · Godot 4.7 · In development",
     "hero.title": "Redbot",
@@ -174,15 +166,7 @@ window.REDBOT_I18N = {
     "studio.p2": "We work in Godot with automated verification: the project checks itself on every change, and the checks measure the rules of the game instead of looking at it. It is the boring part, and it shows up in the bugs that are not there.",
     "studio.p3": "Redbot is the first project. It is also the first.",
 
-    "contact.eyebrow": "CONTACT",
-    "contact.h2": "Let's talk about the game",
-    "contact.p": "For the build, for the full concept, or just to tell us the key art reminds you of another game.",
-    "contact.form.name": "Your name",
-    "contact.form.email": "Your email",
-    "contact.form.message": "Message",
-    "contact.form.submit": "Send",
-    "contact.success": "Message sent — I will reply soon.",
-    "contact.error": "Something went wrong. Try again or write to ciao@kairodev.it.",
+    
 
     "foot.tag": "Redbot · Kairodev",
     "foot.engine": "Godot 4.7",
